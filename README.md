@@ -1,1 +1,0 @@
-# self-replicating-program
